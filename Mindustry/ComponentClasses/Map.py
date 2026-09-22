@@ -1,3 +1,5 @@
+from codeModules.matrixPrint import print
+
 class Map:
     mapChoice: str
     def __init__(self) -> None:

@@ -5,10 +5,14 @@
 from ursina import *
 from ursina.shaders import *
 from codeModules.setupScene import setupScene
+from Mindustry.GAME import GAME
+from codeModules.matrixPrint import print
 
 # ================================================
 # [[Declarations]]
 
+Game = GAME()
+# print(GAME.currentEnemies)
 scene = setupScene() #Scene setup 
 shaderChoice = 'lit_with_shadows_shader'
 
