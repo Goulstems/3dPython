@@ -10,21 +10,22 @@ class NodeMapGenerator:
         if x <= 0 or y <= 0 or z <= 0:
             raise ValueError("Dimensions <= 0")
 
-        node_map = NodeMap()
+        node_map:NodeMap = NodeMap()
+        seed:int =randint(1,100)
 
-        for x in range(x):
-            for y in range(y):
-                for z in range(z):
-                    node = Node()
+        for xPos in range(x):
+            for yPos in range(y):
+                for zPos in range(z):
+                    node:Node = Node()
                     node.type = NodeType.Ground
 
                     # vertical displacement.
                     noiseOffset = noise3d(
-                        x,y,z,randint(1,100),1
+                        xPos,yPos,zPos,seed,1
                     )
 
                     newNodePos = (
-                        x,y+noiseOffset,z
+                        xPos,yPos+noiseOffset,zPos
                     )
 
                     node_map.set(node,newNodePos)

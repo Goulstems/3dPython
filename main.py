@@ -11,8 +11,8 @@ from codeModules.matrixPrint import print
 # ================================================
 # [[Declarations]]
 
-Game = GAME()
 scene = setupScene() #Scene setup 
+Game = GAME()
 
 # ================================================
 # [[Run the game !]]

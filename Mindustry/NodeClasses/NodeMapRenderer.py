@@ -12,6 +12,7 @@ groundEntity = Entity(
     model="cube",
     color=color.green,
     shader=lit_with_shadows_shader,
+    enabled=False
 )
 
 nodeStyleEntities: dict[str, Entity] = {
