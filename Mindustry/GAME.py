@@ -4,27 +4,63 @@ from Mindustry.ComponentClasses.Enemy import Enemy
 from Mindustry.ComponentClasses.EnemyClasses.Enemy1 import Enemy1
 from codeModules.matrixPrint import print
 
+from Mindustry.NodeClasses.NodeMapGenerator import NodeMapGenerator
+from Mindustry.NodeClasses.NodeMapRenderer import NodeMapRenderer
+from Mindustry.NodeClasses.NodeMap import NodeMap
+
 class GAME:
-    map: Map = None
-    base: Base = None
-    currentResources: dict[str, int] = {}
-    currentComponents: dict[str, int] = {
-        "Base": 1,
-        "Player": 1,
-        "Enemy": 0,
-            "BasicEnemy": 0
-    }
-    currentEnemies: dict[str,Enemy] = {}
+    # map: Map = None
+    # base: Base = None
+    # currentResources: dict[str, int] = {}
+    # currentComponents: dict[str, int] = {
+    #     "Base": 1,
+    #     "Player": 1,
+    #     "Enemy": 0,
+    #         "BasicEnemy": 0
+    # }
+    # currentEnemies: dict[str,Enemy] = {}
 
     def __init__(self) -> None:
-        print("New Game")
-        # self.spawnEnemy()
-        # self.spawnEnemy()
-        # self.spawnEnemy()
-        # self.spawnEnemy()
-        # self.spawnEnemy()
-        # self.spawnEnemy()
-        # print(self.displayEnemies())
+        #create NodeMap
+        #run NodeMapRenderer.render (NodeMap) 
+        nodeMap: NodeMap = NodeMapGenerator.generate(20,1,20)
+        NodeMapRenderer.render(nodeMap)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     def displayEnemies(self)->str:
         enemyDisplayStr = "   > [Current Enemies in Game]:\n"
