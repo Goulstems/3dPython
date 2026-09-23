@@ -7,6 +7,7 @@ class NodeMap:
 
     def __init__(self)->None:
         self.nodes = {}
+        self.seed = 0
 
     def get(self, pos: tuple[int,int,int]) -> Optional["Node"]:
         return self.nodes.get(pos)
