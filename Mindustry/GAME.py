@@ -21,8 +21,7 @@ class GAME:
     # currentEnemies: dict[str,Enemy] = {}
 
     def __init__(self) -> None:
-        nodeMap: NodeMap = NodeMapGenerator.generate(50, 1, 20)
-        print(f"Terrain preview: {len(nodeMap.nodes)} tiles, seed={nodeMap.seed}")
+        nodeMap: NodeMap = NodeMapGenerator.generate(100, 100)
         NodeMapRenderer.render(nodeMap)
 
 

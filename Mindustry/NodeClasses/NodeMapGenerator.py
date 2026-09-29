@@ -8,18 +8,18 @@ class NodeMapGenerator:
     @staticmethod
     def generate(
         x: int,
-        y: int,
         z: int,
         height_amplitude: float = 2,
         noise_frequency: float = 0.08,
     ) -> NodeMap:
-        if x <= 0 or y <= 0 or z <= 0:
+        if x <= 0 or z <= 0:
             raise ValueError("Dimensions <= 0")
         if height_amplitude < 0:
             raise ValueError("Height amplitude cannot be negative")
         if noise_frequency < 0:
             raise ValueError("Noise frequency cannot be negative")
 
+        y=1
         node_map: NodeMap = NodeMap()
         node_map.seed = randint(1, 100)
 
