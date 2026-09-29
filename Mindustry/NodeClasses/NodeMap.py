@@ -12,7 +12,7 @@ class NodeMap:
     def get(self, pos: tuple[int,int,int]) -> Optional["Node"]:
         return self.nodes.get(pos)
 
-    def set(self, node: Node, pos: tuple[int,int,int]) -> None:
+    def set(self, node: Node, pos: tuple[float,float,float]) -> None:
         x, y, z = pos
         node.position = pos
         node.left   = self.get((x - 1, y, z))

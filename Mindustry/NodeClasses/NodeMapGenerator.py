@@ -1,44 +1,33 @@
 from Mindustry.NodeClasses.Node import Node
 from Mindustry.NodeClasses.NodeMap import NodeMap
 from Mindustry.NodeClasses.NodeType import NodeType
-from codeModules.noise import noise2d
+from codeModules.noise import noise
 from random import randint
 
 class NodeMapGenerator:
     @staticmethod
-    def generate(
-        x: int,
-        z: int,
-        height_amplitude: float = 2,
-        noise_frequency: float = 0.08,
-    ) -> NodeMap:
-        if x <= 0 or z <= 0:
-            raise ValueError("Dimensions <= 0")
-        if height_amplitude < 0:
-            raise ValueError("Height amplitude cannot be negative")
-        if noise_frequency < 0:
-            raise ValueError("Noise frequency cannot be negative")
+    def generate(x: int,z:int) -> NodeMap:
 
-        y=1
+        #Create our <NodeMap> datastructure
         node_map: NodeMap = NodeMap()
-        node_map.seed = randint(1, 100)
 
+        #Tuning vars for the generation - - -
+        seed:int = randint(1, 100)
+        amp: float = 2 #amplitude
+        freq: float = 0.08 #frequency
+        # - - - - - - - - - - - - - - - - - - 
+
+        #MAIN GENERATOR LOOP ! X by Z area
         for xPos in range(x):
-            for yPos in range(y):
-                for zPos in range(z):
-                    node: Node = Node()
-                    node.type = NodeType.Ground
-                    node_map.set(node, (xPos, yPos, zPos))
-                    node.position = (
-                        xPos,
-                        yPos
-                        + noise2d(
-                            xPos * noise_frequency,
-                            zPos * noise_frequency,
-                            node_map.seed,
-                        )
-                        * height_amplitude,
-                        zPos,
-                    )
+            for zPos in range(z):
+                node: Node = Node()                     #Create new node
+                node.type = NodeType.Ground             #All types are ground to start with for first pass
+                noisePos = (                           #Get noisePos for current coord
+                    xPos,
+                    noise(xPos*freq,zPos*freq,seed)*amp,
+                    zPos
+                )
+                node_map.set(node, noisePos)            #Append new node into new nodemap
+                node.position = noisePos                #Set new node's pos field
 
         return node_map

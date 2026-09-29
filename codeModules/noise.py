@@ -42,7 +42,7 @@ def _lerp(start: float, end: float, amount: float) -> float:
     return start + amount * (end - start)
 
 
-def noise2d(x: float, z: float, seed: int = 0) -> float:
+def noise(x: float, z: float, seed: int = 0) -> float:
     """
     Generate seeded, continuous 2D Perlin noise at an X/Z coordinate.
 
