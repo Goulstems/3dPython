@@ -8,5 +8,5 @@ class Node:
    bottom: Optional["Node"] = None
    front: Optional["Node"] = None
    back: Optional["Node"]  = None
-   position: tuple[int] = (0,0,0)
+   position: tuple[float, float, float] = (0, 0, 0)
    type: NodeType = NodeType.Empty

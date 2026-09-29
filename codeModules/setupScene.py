@@ -3,8 +3,8 @@ from ursina import *
 def setupScene():
     app = Ursina(size=(800, 600), borderless=False)     #Starts Ursina application
     #hot-reload v --
-    # application.hot_reloader._original_source_code_content = application.hot_reloader.get_source_code()
-    # application.hot_reloader.hotreload = True
+    application.hot_reloader._original_source_code_content = application.hot_reloader.get_source_code()
+    application.hot_reloader.hotreload = True
     #- - - - - - ---
     EditorCamera(rotation_x=35, rotation_y=-45) #CAMERA
     setupLighting()
