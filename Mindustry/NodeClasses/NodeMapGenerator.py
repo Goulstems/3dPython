@@ -13,8 +13,8 @@ class NodeMapGenerator:
 
         #Tuning vars for the generation - - -
         seed:int = randint(1, 100)
-        amp: float = 2 #amplitude
-        freq: float = 0.08 #frequency
+        amp: float = 1 #amplitude
+        freq: float = 3 #frequency
         # - - - - - - - - - - - - - - - - - - 
 
         #MAIN GENERATOR LOOP ! X by Z area
@@ -28,6 +28,5 @@ class NodeMapGenerator:
                     zPos
                 )
                 node_map.set(node, noisePos)            #Append new node into new nodemap
-                node.position = noisePos                #Set new node's pos field
 
         return node_map
