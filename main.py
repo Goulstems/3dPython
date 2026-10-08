@@ -11,10 +11,13 @@ from codeModules.matrixPrint import print
 # ================================================
 # [[Declarations]]
 
-scene = setupScene() #Scene setup 
+app = setupScene() #Scene setup 
 Game = GAME()
 
 # ================================================
 # [[Run the game !]]
 
-scene.run()
+app.run()
+
+#
+# test

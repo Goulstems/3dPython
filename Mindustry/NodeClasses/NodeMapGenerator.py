@@ -13,8 +13,8 @@ class NodeMapGenerator:
 
         #Tuning vars for the generation - - -
         seed:int = randint(1, 100)
-        amp: float = 1 #amplitude
-        freq: float = 3 #frequency
+        amp: float = 2 #amplitude
+        freq: float = .08 #frequency
         # - - - - - - - - - - - - - - - - - - 
 
         #MAIN GENERATOR LOOP ! X by Z area
