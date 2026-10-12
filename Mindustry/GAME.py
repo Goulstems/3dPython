@@ -22,10 +22,6 @@ class GAME:
 
     def __init__(self) -> None:
         nodeMap: NodeMap = NodeMapGenerator.generate(50, 50)
-
-
-
-        
         NodeMapRenderer.render(nodeMap)
 
 
